@@ -7,13 +7,18 @@
     <div class="col-md-6">
         <div class="card card-body">
 
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form}}
+            <p>Are you sure you want to delete "{{order}}"?</p>
 
-                <input type="submit" name='Submit'>
+            <form action="" method="POST">
+
+                {% csrf_token %}
+                <a class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+
+                <input class="btn btn-danger" type="submit" name='Confirm'>
             </form>
+
         </div>
     </div>
 </div>
-{% endblock content %}
+
+{% endblock content %} 
